@@ -70,7 +70,7 @@ function Room() {
 
     const handleNegotiation = useCallback(async () => {
         const localOffer = await createNewOffer();
-        socket.emit("call-user", { username: remoteUser, SDP: localOffer });
+        socket.emit("user-call", { username: remoteUser, SDP: localOffer });
     }, [createNewOffer, remoteUser, socket]);
 
     const handleCallAccepted = useCallback(async (data: any) => {
